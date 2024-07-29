@@ -10,17 +10,13 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
-dotenv.config();
-const { Pool } = pg;
-const connectionString = process.env.DATABASE_URL;
-
-const db = new Pool({
-  connectionString: connectionString,
-  ssl: {
-    rejectUnauthorized: false, // This line may be necessary for some environments
-  },
+const db = new pg.Client({
+    user: "postgres",
+    host: "localhost",
+    database: "sales",
+    password: "mhdshanu@123",
+    port: 5432,
 });
-
 db.connect();
 
 app.set('view engine', 'ejs');

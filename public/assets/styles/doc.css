@@ -1,0 +1,95 @@
+/* Base Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Documentation Container Styling */
+.doc-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.75em;
+    margin-bottom: 15px;
+    color: #444;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* List Styling */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fafafa;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover td {
+    background-color: #f1f1f1;
+}

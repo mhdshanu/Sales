@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Customer and Item Pricing</title>
+    <link rel="stylesheet" href="/assets/styles/doc.css">
+</head>
+<body>
+    <div class="doc-container">
+        <h1>Documentation: Customer and Item Pricing</h1>
+        
+        <section class="overview">
+            <h2>Overview</h2>
+            <p>This application tracks and manages customer purchases and item pricing. It calculates special prices based on customer-item combinations and stores these details in a PostgreSQL database. The system also provides an interface to view these prices and calculate totals for customers.</p>
+        </section>
+        
+        <section class="combinations">
+            <h2>1. Customer and Item Combinations</h2>
+            
+            <h3>1.1. Customers</h3>
+            <p>The application supports the following customers:</p>
+            <ul>
+                <li><strong>Customer 1:</strong> Identified as "one"</li>
+                <li><strong>Customer 2:</strong> Identified as "two"</li>
+                <li><strong>Customer 3:</strong> Identified as "three"</li>
+            </ul>
+
+            <h3>1.2. Items</h3>
+            <p>The available items are:</p>
+            <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+                <li>Item C</li>
+                <li>Item D</li>
+                <li>Item E</li>
+            </ul>
+        </section>
+        
+        <section class="pricing-rules">
+            <h2>2. Special Pricing Rules</h2>
+            <p>The special pricing is applied based on the combination of customer and item. The following rules determine the special price for each combination:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Item</th>
+                        <th>Special Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>one</td>
+                        <td>A</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>three</td>
+                        <td>B</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>three</td>
+                        <td>C</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>one</td>
+                        <td>D</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>two</td>
+                        <td>E</td>
+                        <td>15</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

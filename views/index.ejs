@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Item Form</title>
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Enter Customer and Item Information</h1>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About This Application</h2>
+            <p>This application allows you to submit customer and item information. Based on the submitted data, it calculates the price</p>
+            <p>For more details on how this application works, including customer and item combinations and price calculations, please visit the <a href="/documentation" target="_blank">Documentation</a> page.</p>
+        </section>
+
+        <!-- Form Section -->
+        <form action="/submit" method="POST">
+            <div>
+                <label for="customer">Select customer:</label>
+                <select id="customer" name="customer" required>
+                    <option value="">--Select a customer--</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
+                    <option value="three">Three</option>
+                </select>
+            </div>
+            <div>
+                <label for="item">Select item:</label>
+                <select id="item" name="item" required>
+                    <option value="">--Select an item--</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

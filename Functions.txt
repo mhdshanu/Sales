@@ -1,0 +1,70 @@
+CREATE OR REPLACE FUNCTION get_item_price(customer_id INT, item_id INT)
+RETURNS INT AS $$
+DECLARE
+    customer_name TEXT;
+    item_name TEXT;
+    special_price INT;
+BEGIN
+    -- Retrieve customer name and item name based on IDs
+    SELECT name INTO customer_name FROM customers WHERE id = customer_id;
+    SELECT item INTO item_name FROM items WHERE id = item_id;
+
+    -- Determine special_price based on customer_name and item_name
+    CASE
+        WHEN customer_name = 'one' AND item_name = 'A' THEN
+            special_price := 8;
+        WHEN customer_name = 'three' AND item_name = 'B' THEN
+            special_price := 11;
+        WHEN customer_name = 'three' AND item_name = 'C' THEN
+            special_price := 10;
+        WHEN customer_name = 'one' AND item_name = 'D' THEN
+            special_price := 14;
+        WHEN customer_name = 'two' AND item_name = 'E' THEN
+            special_price := 15;
+        ELSE
+            -- Default pricing based on item_name
+            CASE item_name
+                WHEN 'A' THEN special_price := 10;
+                WHEN 'B' THEN special_price := 12;
+                WHEN 'C' THEN special_price := 14;
+                WHEN 'D' THEN special_price := 16;
+                WHEN 'E' THEN special_price := 20;
+                ELSE special_price := NULL;  -- Handle unknown item_name
+            END CASE;
+    END CASE;
+
+    RETURN special_price;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+
+Adding custome's prices
+
+CREATE OR REPLACE FUNCTION get_total_price_by_customer(customer_name TEXT) RETURNS NUMERIC AS $$
+DECLARE
+    total_price NUMERIC;
+BEGIN
+    SELECT SUM(ci.special_price)
+    INTO total_price
+    FROM customer_item ci
+    JOIN customers c ON ci.customer_id = c.id
+    WHERE c.name = customer_name;
+
+    RETURN total_price;
+END;
+$$ LANGUAGE plpgsql;
+
+
+Total tax
+CREATE OR REPLACE FUNCTION calculate_total_tax()
+RETURNS numeric AS $$
+DECLARE
+    total_tax numeric;
+BEGIN
+    SELECT SUM(tax) INTO total_tax FROM items;
+    RETURN total_tax;
+END;
+$$ LANGUAGE plpgsql;
+
